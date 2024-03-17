@@ -1,36 +1,78 @@
-/* Estilos para el cuerpo de la página */
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
 
-/* Contenedor principal */
-.container {
-    max-width: 800px;
-    margin: 20px auto;
+section {
+    margin: 50px auto;
+    max-width: 600px;
     padding: 20px;
-    background-color: #fff;
+    border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para títulos */
-h1, h2 {
-    color: #333;
+h2 {
+    text-align: center;
 }
 
-/* Estilos para listas */
-ul {
-    list-style: none;
-    padding: 0;
+/* Estilos del formulario */
+.formulario {
+    margin-top: 20px;
 }
 
-li {
+legend {
+    font-weight: bold;
+}
+
+.contenedor-campos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.campo {
+    flex: 1 1 45%; /* Distribución de espacio para los campos */
     margin-bottom: 10px;
 }
 
-li strong {
-    font-weight: bold;
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-text,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón de enviar */
+.boton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #45a049;
+}
+
+/* Estilos de alineación */
+.alinear-derecha {
+    text-align: right;
+}
+
+/* Estilos para dispositivos pequeños */
+@media screen and (max-width: 600px) {
+    .campo {
+        flex: 1 1 100%; /* Mostrar los campos en una sola columna en dispositivos pequeños */
+    }
 }
