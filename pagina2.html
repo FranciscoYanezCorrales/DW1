@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>pagina2</title>
+</head>
+<body>
+    
+    <p>Nombre: <span id="nombre"></span></p>
+    <p>Teléfono: <span id="telefono"></span></p>
+    <p>Correo: <span id="correo"></span></p>
+    <p>Mensaje: <span id="mensaje"></span></p>
+
+    
+    <script>
+        // Obtener los datos del almacenamiento local
+        var nombre = localStorage.getItem('nombre');
+        var telefono = localStorage.getItem('telefono');
+        var correo = localStorage.getItem('correo');
+        var mensaje = localStorage.getItem('mensaje');
+        
+        // Mostrar los datos en la página
+        document.getElementById('nombre').textContent = nombre;
+        document.getElementById('telefono').textContent = telefono;
+        document.getElementById('correo').textContent = correo;
+        document.getElementById('mensaje').textContent = mensaje;
+        
+        // Limpiar el almacenamiento local después de mostrar los datos
+        localStorage.removeItem('nombre');
+        localStorage.removeItem('telefono');
+        localStorage.removeItem('correo');
+        localStorage.removeItem('mensaje');
+        
+    </script>
+    <button><a href="Index.html">Volver atras</a></button>
+</body>
+</html>
