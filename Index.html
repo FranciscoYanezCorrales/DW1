@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Contacto</title>
     <style>
+        /* Estilos del formulario */
         body {
             font-family: Arial, sans-serif;
         }
@@ -44,7 +45,7 @@
 
 <h1>Formulario de Contacto</h1>
 
-<form id="formulario">
+<form id="formulario" action="Resultado1.html" method="GET" target="_blank">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" required><br>
 
@@ -59,41 +60,6 @@
 
     <input type="submit" value="Enviar">
 </form>
-
-<div id="resultado" style="display: none;">
-    <h2>Datos del Formulario</h2>
-    <ul id="datos">
-        <!-- Los datos del formulario serán insertados aquí -->
-    </ul>
-</div>
-
-<script>
-    document.getElementById("formulario").addEventListener("submit", function(event) {
-        event.preventDefault(); // Evitar que se envíe el formulario
-
-        // Recoger datos del formulario
-        var nombre = document.getElementById("nombre").value;
-        var telefono = document.getElementById("telefono").value;
-        var correo = document.getElementById("correo").value;
-        var descripcion = document.getElementById("descripcion").value;
-
-        // Mostrar los datos recogidos
-        document.getElementById("resultado").style.display = "block";
-        var listaDatos = document.getElementById("datos");
-        listaDatos.innerHTML = ""; // Limpiar lista de datos antes de mostrar nuevos datos
-        var datos = [
-            {label: "Nombre:", value: nombre},
-            {label: "Teléfono:", value: telefono},
-            {label: "Correo electrónico:", value: correo},
-            {label: "Descripción:", value: descripcion}
-        ];
-        datos.forEach(function(item) {
-            var li = document.createElement("li");
-            li.textContent = item.label + " " + item.value;
-            listaDatos.appendChild(li);
-        });
-    });
-</script>
 
 </body>
 </html>
