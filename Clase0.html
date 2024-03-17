@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contacto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section>
+        <h2>Contacto</h2>
+
+        <form class="formulario">
+            <fieldset>
+                <legend>Contactános llenando todos los campos</legend>
+                <div class="contenedor-campos">
+                    <div class="campo">
+                        <label>Nombre</label>
+                        <input class="input-text" type="text" name="nombre" placeholder="Nombre">
+                    </div>
+                    <div class="campo">
+                        <label>Teléfono</label>
+                        <input class="input-text" type="tel" name="telefono" placeholder="Teléfono">
+                    </div>
+                    <div class="campo">
+                        <label>Correo</label>
+                        <input class="input-text" type="email" name="correo" placeholder="Correo">
+                    </div>
+                    <div class="campo">
+                        <label>Mensaje:</label>
+                        <textarea class="input-text" name="mensaje"></textarea>
+                    </div>
+                </div> <!--contenedor campos-->
+
+                <div class="alinear-derecha flex">
+                    <input class="boton w-sm-100" type="submit" value="Enviar">
+                    
+                </div>
+                <button><a href="Index.html">Volver atras</a></button>
+            </fieldset>
+        </form>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.formulario').addEventListener('submit', function(e) {
+                e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+
+                // Obtener los valores de los campos del formulario
+                var nombre = document.querySelector('input[name="nombre"]').value;
+                var telefono = document.querySelector('input[name="telefono"]').value;
+                var correo = document.querySelector('input[name="correo"]').value;
+                var mensaje = document.querySelector('textarea[name="mensaje"]').value;
+
+                // Guardar los valores en el almacenamiento local
+                localStorage.setItem('nombre', nombre);
+                localStorage.setItem('telefono', telefono);
+                localStorage.setItem('correo', correo);
+                localStorage.setItem('mensaje', mensaje);
+
+                // Redirigir a la página de agradecimiento
+                window.location.href = 'pagina2.html';
+            });
+        });
+    </script>
+</body>
+</html>

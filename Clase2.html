@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Web con JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #datos {
+            margin-top: 20px;
+        }
+        .lista {
+            list-style: none;
+            padding: 0;
+        }
+        .lista li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de Web con JavaScript</h1>
+
+    <div id="datos">
+        <!-- Los datos del servidor se mostrarán aquí -->
+    </div>
+
+    <script>
+        // Objeto de ejemplo
+        const datos = [
+            { id: 1, nombre: 'Confort Lider', precio: 1000 },
+            { id: 2, nombre: 'Detergente Lider', precio: 1000 },
+            { id: 3, nombre: 'Esponja Lider', precio: 1000 },
+            { id: 4, nombre: 'Chocapic', precio: 4000 },
+            { id: 5, nombre: 'Yogurt Pack x6', precio: 1000 }
+        ];
+
+        // Función asíncrona para obtener datos del servidor
+        async function obtenerDatos() {
+            // Simular una solicitud fetch con los datos
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve(datos);
+                }, 1000); // Simular retardo de 1 segundo
+            });
+        }
+
+        // Función para calcular el total de precios usando map
+        function calcularTotal(datos) {
+            return datos.map(item => item.precio).reduce((total, precio) => total + precio, 0);
+        }
+
+        // Función para filtrar productos por precio usando filter
+        function filtrarProductos(datos, maxPrecio) {
+            return datos.filter(item => item.precio <= maxPrecio);
+        }
+
+        // Función principal para mostrar datos en la página
+        async function mostrarDatos() {
+            try {
+                // Obtener datos del servidor
+                const datos = await obtenerDatos();
+
+                // Mostrar datos en la página
+                const datosHTML = `
+                    <h2>Productos</h2>
+                    <ul class="lista">
+                        ${datos.map(item => `<li>${item.nombre} - $${item.precio}</li>`).join('')}
+                    </ul>
+                    <p>Total de precios: $${calcularTotal(datos)}</p>
+                    <h2>Productos con precio menor o igual a $1.000</h2>
+                    <ul class="lista">
+                        ${filtrarProductos(datos, 1000).map(item => `<li>${item.nombre} - $${item.precio}</li>`).join('')}
+                    </ul>
+                `;
+                document.getElementById('datos').innerHTML = datosHTML;
+            } catch (error) {
+                console.error('Error al obtener datos:', error);
+            }
+        }
+
+        // Llamar a la función principal para mostrar datos al cargar la página
+        mostrarDatos();
+    </script>
+</body>
+</html>

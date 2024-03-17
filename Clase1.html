@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de JavaScript</title>
+</head>
+<body>
+
+<script>
+    // Manejo de Var, Let, Const
+    var nombreVar = "Francisco Yañez";
+    let nombreLet = "Constanza Duarte";
+    const edadFco = 33;
+    const edadCony = 34;
+
+	// Uso de funciones Arrow y Template String
+    const saludar = (nombre, edad) => {
+    return `Hola, ${nombre}! Tienes ${edad} años.`;
+    };
+
+
+    // Mostrar información en la consola
+    console.log(saludar(nombreVar, edadFco));
+    console.log(saludar(nombreLet, edadCony));
+	
+	
+
+    // Mostrar información en la página web
+    document.write(`<h1>${saludar(nombreVar, edadFco)}</h1>`);
+    document.write(`<p>${saludar(nombreLet, edadCony)}</p>`);
+</script>
+</body>
+</html>

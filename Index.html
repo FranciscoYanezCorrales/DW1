@@ -1,63 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Contacto</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de Clases Desarrollo WEB</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px auto;
+            max-width: 400px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        li {
+            border-bottom: 1px solid #ddd;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        a {
+            display: block;
+            padding: 10px 20px;
+            color: #333;
+            text-decoration: none;
+        }
+        a:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
 </head>
 <body>
-    <section>
-        <h2>Contacto</h2>
-
-        <form class="formulario">
-            <fieldset>
-                <legend>Contactános llenando todos los campos</legend>
-                <div class="contenedor-campos">
-                    <div class="campo">
-                        <label>Nombre</label>
-                        <input class="input-text" type="text" name="nombre" placeholder="Nombre">
-                    </div>
-                    <div class="campo">
-                        <label>Teléfono</label>
-                        <input class="input-text" type="tel" name="telefono" placeholder="Teléfono">
-                    </div>
-                    <div class="campo">
-                        <label>Correo</label>
-                        <input class="input-text" type="email" name="correo" placeholder="Correo">
-                    </div>
-                    <div class="campo">
-                        <label>Mensaje:</label>
-                        <textarea class="input-text" name="mensaje"></textarea>
-                    </div>
-                </div> <!--contenedor campos-->
-
-                <div class="alinear-derecha flex">
-                    <input class="boton w-sm-100" type="submit" value="Enviar">
-                </div>
-            </fieldset>
-        </form>
-    </section>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('.formulario').addEventListener('submit', function(e) {
-                e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
-
-                // Obtener los valores de los campos del formulario
-                var nombre = document.querySelector('input[name="nombre"]').value;
-                var telefono = document.querySelector('input[name="telefono"]').value;
-                var correo = document.querySelector('input[name="correo"]').value;
-                var mensaje = document.querySelector('textarea[name="mensaje"]').value;
-
-                // Guardar los valores en el almacenamiento local
-                localStorage.setItem('nombre', nombre);
-                localStorage.setItem('telefono', telefono);
-                localStorage.setItem('correo', correo);
-                localStorage.setItem('mensaje', mensaje);
-
-                // Redirigir a la página de agradecimiento
-                window.location.href = 'pagina2.html';
-            });
-        });
-    </script>
+    <h1>Índice de Clases</h1>
+    <ul>
+        <li><a href="Clase0.html">Clase 0</a></li>
+        <li><a href="Clase1.html">Clase 1</a></li>
+        <li><a href="Clase2.html">Clase 2</a></li>
+        <li><a href="Clase3.html">Clase 3</a></li>
+        <li><a href="Clase4.html">Clase 4</a></li>
+        <li><a href="Clase5.html">Clase 5</a></li>
+        <li><a href="Clase6.html">Clase 6</a></li>
+        <li><a href="Clase7.html">Clase 7</a></li>
+        <li><a href="Clase8.html">Clase 8</a></li>
+        <li><a href="Clase9.html">Clase 9</a></li>
+        <li><a href="Clase10.html">Clase 10</a></li>
+    </ul>
 </body>
 </html>
