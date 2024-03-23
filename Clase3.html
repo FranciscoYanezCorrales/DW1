@@ -4,6 +4,56 @@
     </head>
     <body>
         <h1>Clase 3</h1>
+        <div>
+            <input type="text" id="result" readonly>
+        </div>
+        <div>
+            <button onclick="clearResult()">C</button>
+            <button onclick="deleteLastCharacter()"><</button>
+            <button onclick="appendCharacter('7')">7</button>
+            <button onclick="appendCharacter('8')">8</button>
+            <button onclick="appendCharacter('9')">9</button>
+            <button onclick="appendCharacter('/')">/</button>
+        </div>
+        <div>
+            <button onclick="appendCharacter('4')">4</button>
+            <button onclick="appendCharacter('5')">5</button>
+            <button onclick="appendCharacter('6')">6</button>
+            <button onclick="appendCharacter('*')">*</button>
+        </div>
+        <div>
+            <button onclick="appendCharacter('1')">1</button>
+            <button onclick="appendCharacter('2')">2</button>
+            <button onclick="appendCharacter('3')">3</button>
+            <button onclick="appendCharacter('-')">-</button>
+        </div>
+        <div>
+            <button onclick="appendCharacter('0')">0</button>
+            <button onclick="appendCharacter('.')">.</button>
+            <button onclick="calculateResult()">=</button>
+            <button onclick="appendCharacter('+')">+</button>
+        </div>
+
+        <script>
+            function appendCharacter(character) {
+                document.getElementById('result').value += character;
+            }
+
+            function deleteLastCharacter() {
+                var result = document.getElementById('result').value;
+                document.getElementById('result').value = result.slice(0, -1);
+            }
+
+            function clearResult() {
+                document.getElementById('result').value = '';
+            }
+
+            function calculateResult() {
+                var result = document.getElementById('result').value;
+                var calculatedResult = eval(result);
+                document.getElementById('result').value = calculatedResult;
+            }
+        </script>
         <p>En esta clase se verá:</p>
         <ul>
             <li>Formularios</li>
